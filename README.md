@@ -49,7 +49,7 @@ vue-cliは雛形からプロジェクトを作成してくれる公式ツール�
 ## 概念
 簡単な理解としては、  
 npmがバージョン管理ツール  
-vue-cliがelコマンド(ここではwebpack) が使える様になった様なもの  
+vue-cli(django)でdjangoコマンド(ここではwebpack) が使える様になった様なもの  
 そのおかげで環境を構築できる  
 ```
 $ vue init webpack sample
