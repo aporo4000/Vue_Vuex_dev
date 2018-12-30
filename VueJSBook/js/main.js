@@ -1,19 +1,33 @@
-Vue.component('fruits-item-name', {
-  props: {
-    fruitsItem: { // テンプレート中ではケバブケース
-      type: Object, // オブジェクトかどうか
-      required: true // このコンポーネントには必須なのでtrue
-    }
-  },
-  template: '<li>{{fruitsItem.name}}</li>'
-})
+var counterButton = Vue.extend({
+    template: '<span>{{counter}}個<button v-on:click="addToCart">追加</button></span>',
+    data: function () {
+        return {
+            counter: 0
+        }
+    },
+    methods: {
+        addToCart: function () {
+            this.counter += 1;
+            this.$emit('increment')
+        }
+    },
+});
 
 new Vue({
-    el: '#fruits-component',
+    el: '#fruits-counter',
+    components:{
+        'counter-button': counterButton
+    },
     data: {
-        fruitsItems: [
+        total: 0,
+        fruits: [
             {name: '梨'},
             {name: 'イチゴ'}
         ]
+    },
+    methods: {
+        incrementCartStatus: function () {
+            this.total += 1
+        }
     }
-})
+});
