@@ -1,59 +1,37 @@
-var items = [
-    {
-        name: '鉛筆',
-        price: 300,
-        quantity: 0
-    },
-    {
-        name: 'ノート',
-        price: 400,
-        quantity: 0
-    },
-    {
-        name: '消しゴム',
-        price: 500,
-        quantity: 0
-    }
-]
-var vm = new Vue({
-    el: '#app',
-    data: {
-        items: items
-    },
-    filters: {
-        numberWithDelimiter: function(value){
-            if(!value){
-                return '0'
-            }
-            return value.toString().replace(/(¥d)(?=(¥d{3})+$)/g, '$1,')
-        }
-    },
-    methods: {
-        doBuy: function () {
-            alert(this.totalPriceWithTax + '円のお買い上げ!')
-            this.items.forEach(function (item){
-                item.quantity = 0
-            })
-        }
-    },
-    computed: {
-        totalPrice: function () {
-            return this.items.reduce(function (sum, item){
-                return sum + (item.price * item.quantity)
-            }, 0)
-        },
-        totalPriceWithTax: function () {
-            return Math.floor(this.totalPrice * 1.08)
-        },
-        canBuy: function () {
-            return this.totalPrice >= 1000  // 1000円以上から購入可能
-        },
-        errorMessageStyle: function(){
-            return {
-                border: this.canBuy ? '' : '1px solid red',
-                color: this.canBuy ? '' : 'red'
-            }
-        }
-    }
+Vue.component('fruits-list-title', {
+    template: '<h1>フルーツ一覧</h1>'
 });
-window.vm = vm
+
+Vue.component('fruits-list-description', {
+    template: '<p>季節の代表的なフルーツの一覧です</p>'
+});
+
+Vue.component('fruits-list-table', {
+    template: `
+    <table>
+        <tr>
+            <th>季節</th>
+            <th>フルーツ</th>
+        </tr>
+        <tr>
+            <td>春</td>
+            <td>いちご</td>
+        </tr>
+        <tr>
+            <td>夏</td>
+            <td>スイカ</td>
+        </tr>
+        <tr>
+            <td>秋</td>
+            <td>ぶどう</td>
+        </tr>
+        <tr>
+            <td>冬</td>
+            <td>みかん</td>
+        </tr>
+    </table>
+    `
+})
+new Vue({
+    el: '#fruits-list'
+});
