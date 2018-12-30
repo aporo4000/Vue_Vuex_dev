@@ -1,5 +1,10 @@
 # Vue_Vuex_BOOK
 
+<img src="images/vue_book.png" alt="Vue.js本">
+
+[amazonリンク](https://www.amazon.co.jp/Vue-js入門-基礎から実践アプリケーション開発まで-川口-和也/dp/4297100916/)
+
+
 ### Vue.js & Vuex のインストール方法  
 https://vuex.vuejs.org/ja/installation.html  
 https://jp.vuejs.org/v2/guide/installation.html  
