@@ -5,6 +5,15 @@
 [amazonリンク](https://www.amazon.co.jp/Vue-js入門-基礎から実践アプリケーション開発まで-川口-和也/dp/4297100916/)
 
 
+### 参考サイト
+https://www.udemy.com/learn-vuejs/  
+https://qiita.com/denzow  
+https://github.com/denzow/DjangoDeKanban  
+https://jp.vuejs.org/v2/guide/installation.html  
+https://vuex.vuejs.org/ja/installation.html  
+https://qiita.com/FumioNonaka/items/af16147d5232b803339b  
+
+
 ### Vue.js & Vuex のインストール方法  
 https://vuex.vuejs.org/ja/installation.html  
 https://jp.vuejs.org/v2/guide/installation.html  
